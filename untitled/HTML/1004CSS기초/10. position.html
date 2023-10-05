@@ -16,6 +16,7 @@
       border: 1px solid;
     }
     /*
+    position:
     static : 기본 값 top / right / bottom / left를 무시함
     relative : 원래의 위치를 기준으로 이동(position이 static일 때를 기준)
     absolute : position이 static이 아닌 가장 가까운 부모/ 선조를 기준으로 이동
@@ -23,6 +24,18 @@
     */
     .box1{
       position:relative;
+        top: 50px;
+        left :50px;
+    }
+    section{
+        background-color:black;
+        height:300px;
+    }
+    .box2{
+        position:absolute;
+        left:150px;
+        top:50px;
+
     }
   </style>
 </head>
@@ -30,10 +43,12 @@
 
 
 
-<div class ="box1"></div>
-<div class ="box2"></div>
-<div class ="box3"></div>
-<div class ="box4"></div>
+<div class ="box1">box1</div>
+<section>
+    <div class ="box2">box2</div>
+    <div class ="box3">box3</div>
+</section>
+<div class ="box4">box4</div>
 
 </body>
 </html>
