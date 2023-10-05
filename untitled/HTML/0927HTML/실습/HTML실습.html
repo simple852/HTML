@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+</head>
+<body>
+<h1>HTML</h1>
+<p>실습</p>
+
+<h1>회원 가입을 환영합니다.</h1>
+<form>
+<fieldset>
+    <legend>사용자 정보</legend>
+    <ul>
+
+        <li>아이디 <input type="text" placeholder="4자~10자 사이, 공백없이"></li>
+        <li>이메일 <input type="text"> </li>
+        <li>비밀번호 <input type="password" placeholder="문자와 숫자,특수 기호 포함"> </li>
+        <li>비밀번호 확인 <input type="password"> </li>
+        <li>
+            가입경로
+            <select>
+                <option>블로그</option>
+                <option>sns</option>
+            </select>
+        </li>
+        <li>
+            <label>
+                메모
+                <textarea cols="30" rows="5" placeholder="남길 말씀이 있다면 여기에"></textarea>
+            </label>
+        </li>
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>이벤트와 새로운 소식</legend>
+    <label><input type="radio">메일수신</label>
+    <label><input type="radio" checked>메일 수신 안함</label>
+</fieldset >
+    <input type="submit" value ="가입하기">
+    <input type="button" value ="취소">
+</form>
+</body>
+</html>

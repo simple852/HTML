@@ -10,9 +10,10 @@
 <hr>
 
 <strong>개인 정보</strong>
+<form action="/form" method="get">
 <ul>
-    <li>이름 <input type="text" name = "name"></li>
-    <li>연락처 <input type="tel" name = "tel"></li>
+    <li><label>이름<input type="text" name="name"></label></li>
+    <li><label>연락처<input type="tel" name="tel"></label></li>
 </ul>
 
 <strong>지원분야</strong>
@@ -22,9 +23,14 @@
     <li> <input type="radio"  name="sub">개발 환경 개선</li>
 </ul>
 
-<strong>지원동기</strong><br>
-<textarea cols="100" rows="20" name = "introduce"></textarea><br>
+<strong>지원동기</strong>
+<br>
 
-<button>접수하기</button> <input type="button" value="다시쓰기">
+<div>
+<textarea cols="100" rows="20" name = "introduce"></textarea>
+</div>
+<button>접수하기</button> <input type="reset" value="다시쓰기">
+
+</form>
 </body>
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>폰트바꾸기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'jalnan';
+            src: url('fonts/Jalnan.ttf');
+        }
+    </style>
+    <style>
+        /*
+        순서 지킬것  family -> size -> weight
+        px : 모니터 해상도에 맞춰진 절대 크기
+        %: 부모 요소에 맞춰진 상대 크기 (부모 요소에 비해 ?%의 크기)
+        em : 부모요소의 font-size에 맞처ㅜ진 상대 크기
+        em=> 부모 요소의 font-size가 10px이라면 2em은 20px
+        rem : 최상위 부모(html 문서 font-size) 에 맞춰진 상대크기
+        1rem => 16px (html의 font-size는 기본 16px)
+         */
+        #d1{
+            /* shadow 가로, 세로 , 번짐, 색상 순 */
+            text-shadow: -50px -50px 10px black;
+            /*spacing 글자 간격 */
+            letter-spacing: 5px;
+            text-decoration: underline;
+            font-size: 2rem;
+            /*text-decoration: overline;*/
+            text-transform : capitalize;
+
+
+        }
+        #d2{
+
+            word-spacing: 20px;
+            font-family: "Nanum Myeongjo",serif;
+            text-transform : lowercase;
+            height: 100px;
+            background-color: darkkhaki;
+
+        }
+        #d3{
+
+            font-family: 'jua' , serif;
+            font-size : 16px;
+            text-overflow : clip;
+            line-height: 100px;
+             font-weight: 500;
+
+
+        }
+        h1{
+            color:#6eff66;
+            text-align: center;
+            font-family: jalnan,serif;
+            text-shadow: 10px 10px 10px black;
+            letter-spacing: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>This is Title</h1><br>
+<div id="d1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dignissimos dolores eos, illo iste quisquam reiciendis veniam voluptates. A, aliquam consequuntur dolorum ea neque quae repellendus reprehenderit saepe similique voluptas?</div>
+<div id="d2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita in inventore necessitatibus perspiciatis quae sunt totam voluptatum! Asperiores commodi delectus dignissimos doloremque eaque modi mollitia nam neque porro, voluptates!</div>
+<div id="d3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolores ducimus facilis labore minima non officia possimus repellat, voluptas voluptatibus? Ad consectetur cupiditate debitis error iure magnam, maiores obcaecati quia?</div>
+</body>
+</html>

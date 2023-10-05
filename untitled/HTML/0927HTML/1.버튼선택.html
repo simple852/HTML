@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버튼선택</title>
+</head>
+<body>
+<!--
+selected 초기값
+disabled 원하지 않는 선택을 제외하기 위해 사용
+fieldset 공간할당
+legend fieldset에서 제목할당
+-->
+<form method="get" action ="form" >
+<select name = "test">
+    <option value="1">항목1</option>
+    <option value="1">항목2</option>
+    <option value="1">항목3</option>
+    <option value="1">항목4</option>
+</select>
+
+<select name = "mobile" required>
+    <option disabled selected>선택하세요</option>
+    <option value="skt">skt</option>
+    <option value="kt">kt</option>
+    <option value="lgu">lgu</option>
+</select>
+    <button>전송</button>
+</form>
+
+<form method="get" action ="form" >
+    <input type="text" list = "data">
+    <datalist id="data">
+        <option value="data1">data1</option>
+        <option value="data2">data2</option>
+        <option value="data3">data3</option>
+        <option value="data4">data4</option>
+    </datalist>
+
+
+</form>
+
+<form>
+    <input type="text">
+    <button type="submit">전송</button>
+    <button type="reset">초기화</button>
+    <button type="button">버튼</button>
+</form>
+
+<fieldset>
+    <legend>필드 제목</legend>
+   <textarea>sad</textarea>
+</fieldset>
+</body>
+</html>

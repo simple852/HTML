@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+        input{
+            background-color: beige;
+        }
+        /* 태그 타입별 선택자 지정*/
+        input[type="text"]{
+            color : crimson;
+        }
+        /* 태그 타입별 선택자 지정*/
+        input[value="버튼1"]{
+            color : gold;
+        }
+        input[type="submit"]{
+            color : red;
+        }
+        input[required]{
+          font-size: 30px;
+        }
+        a{
+            text-decoration: none; /* a태그 밑줄 삭제*/
+            color : black;
+        }
+        input[type="button"],[type="submit"]{
+            cursor : pointer;
+        }
+        a[href *='https']{
+            background-color :white;
+        }
+       a[class="a"]{
+            color : blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<form>
+    <a class ="a b" href="https://www.google.com">구글로</a><br>
+    <a class ="a" href="https://www.naver.com">네이버로</a><br>
+    <a class ="b" href=" 1.%20CSS적용하기.html">커스텀 링크</a>
+    <input type="text" value ="값이 있음" readonly required><br>
+    <input type="button" value = "버튼1" disabled><br>
+    <input type="button" value = "버튼2" readonly><br>
+    <input type="submit" value = "전송"><br>
+</form>
+
+
+</body>
+</html>

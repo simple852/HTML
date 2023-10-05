@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>디스플레이</title>
+  <style>
+    div{
+      /*
+      display : 기존 요소의 배치 속성을 다르게 변경
+          => block: 블록 요소로
+          => inline : 인라인 요소로
+          => inline-block: 인라인인데 블록 요소
+          =>witdh height등 박스 모델처럼 속성 적용이 가능하며
+          =>inline 요소 처럼 나열되는 성격을 가짐
+          => flex : flex 요소
+          => grid : grid 요소
+      */
+
+      display: inline-block;
+      padding : 20px 0 20px 0;
+      text-align: center;
+      border: 1px solid;
+      background-color: #6eff66;
+      width: 100px;
+      height: 100px;
+    }
+
+    span{
+      /*
+      margin : 0 auto
+      => box 모델에서 중앙으로 보낼때 사용
+      =>auto : 남는 양쪽 여백을 전부 margin줘라
+      */
+      margin: 30px auto;
+      display: block;
+      width: 100px;
+      text-align: center;
+      background-color: #ff7df5;
+    }
+    body{
+      text-align: center;
+    }
+    .s1{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .s2{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .s3{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+  </style>
+</head>
+<body>
+
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<span class="s1">span1</span>
+<span class="s2">span2</span>
+<span class="s3">span3</span>
+
+</body>
+</html>
