@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜스폼</title>
+  <style>
+    div{
+      width:200px;
+      height:200px;
+    }
+    .box1{
+      position: absolute;
+      left:50%;
+      top:50%;
+      background:#0055FF;
+      transform: translate(-50%, -50%) rotate(50deg) scale(50%);
+    }
+    .box2{
+      background: darkgray;
+
+    }
+    .box2:hover{
+      transform: rotate3d(2.5,1.2,-1.5,55deg);
+    }
+    .box3{
+    background: cornflowerblue;
+      transition-duration:0.5s;
+      transition-delay:0s;
+      transition-timing-function: linear;
+      transition-property: all;
+    }
+    .box3:hover{
+      background-color:black;
+      transform: scale(120%) translateX(50px);
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+</body>
+</html>

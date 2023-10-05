@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자식선택자</title>
+
+    <style>
+        div:first-child {
+            background-color: darkgray;
+        }
+        section>div:first-child {
+            background-color: burlywood;
+        }
+        section>div:last-child {
+            background-color:beige;
+        }
+        section>span:last-child{
+            background-color: darkgray;
+        }
+        main{
+            background-color:beige;
+        }
+        main>article:nth-child(even){
+            background-color: #ff7df5;
+        }
+        main>article:nth-child(odd){
+            background-color: darkgray;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    1
+</div>
+<section>
+    <div>1</div>
+    <div>2</div>
+    <div>3
+        <div>3-1</div>
+    </div>
+    <div>4</div>
+</section>
+<section>
+    <span>span1</span><br>
+    <span>span2</span><br>
+    <span>span3</span><br>
+</section>
+<main>
+    <article>1</article>
+    <article>2</article>
+    <article>3</article>
+    <article>4</article>
+    <article>5</article>
+    <article>6</article>
+    <article>7</article>
+</main>
+</body>
+</html>

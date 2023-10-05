@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>그라데이션</title>
+    <style>
+        div{
+            width:500px;
+            height:300px;
+        }
+        .grad1{
+            /*왼쪽 위에서 오른쪽 아래 방향으로 파랑으로 시작해서 흰색으로 끝나라*/
+            background: #6eff66 linear-gradient(to right bottom, blue, white);
+        }
+        .grad2{
+            /*45도(오른쪽 위) 방향으로, 빨으로 시작해서 흰으로 끝*/
+            background: beige linear-gradient(45deg, #F00, #fff);
+        }
+        .grad3{
+            background:cornflowerblue linear-gradient(to bottom, #05F,white 30%,#0055FF);
+        }
+        .grad4{
+            background:cornflowerblue radial-gradient(white,#6eff66,#FF0000);
+        }
+        .grad5{
+            background:cornflowerblue radial-gradient(circle,white,#0055FF);
+        }
+        .grad6{
+            /*closest-side : 가까운 측면을 찾아감*/
+            /*closest-closet : */
+            background:cornflowerblue radial-gradient(circle closest-side at 40% 30%, white,green,black);
+        }
+        .pattern1{
+            background:cornflowerblue repeating-linear-gradient(yellow,yellow 20px, red 20px, red 40px);
+
+        }
+        .pattern2{
+            background:cornflowerblue repeating-linear-gradient(circle, blue, white 10%,blue 10%,blue 10%);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+
+    <div class="grad4"></div>
+    <div class="grad5"></div>
+    <div class="grad6"></div>
+
+    <div class="pattern1"></div>
+    <div class="pattern2"></div>
+</body>
+</html>

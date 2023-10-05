@@ -9,7 +9,7 @@
             text-align: center;
             font-size:18px;
             font-weight: bold;
-            width: 500px;
+            width: 100%;
             margin: auto;
             line-height: 40px;
 
@@ -35,13 +35,45 @@
             font-weight: bold;
             font-size: 25px;
         }
+        .backimg{
+            position: relative;
+            background-image: url("../images/img.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            margin-bottom: 10px;
+        /*
+            overflow: hidden;
+            튀어나오는 부분을 숨긴다
+        */
+        }
+        .titlecover{
+            position: absolute;
+            bottom:0;
+            width:100%;
+
+            background-size: contain;
+            text-align: left;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+        }
 
     </style>
 </head>
 <body>
 <main>
-    <div>
-        <img src="../images/img.png" alt="">
+    <div class ="backimg">
+<!--        <img src="../images/img.png" alt="">-->
+        <div class="titlecover">
+            <h1 style="padding-left: 20px;"> 가정용 꿀사과</h1>
+            <div style="color:orange; padding-left: 20px;">
+                <p >흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다</p>
+                <p>질좋은 사과를 저렴하게 즐겨보세요</p>
+
+            </div>
+
+        </div>
 
     </div>
 

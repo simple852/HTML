@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가상요소</title>
+  <script src="https://kit.fontawesome.com/32af1d52c8.js" crossorigin="anonymous"></script>
+<style>
+  section>button{
+    cursor: pointer;
+    color: black;
+    background-color: cornflowerblue;
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    font-weight: bold;
+  }
+  button>a{
+    color: black;
+    text-decoration: none;
+
+  }
+  section>button:hover, button>a:hover{
+    color: white;
+  }
+  input:disabled{
+    background-color:black;
+  }
+  input:focus{
+    background-color: yellow;
+  }
+  input:active{
+    background-color:blue;
+  }
+  a:visited{
+    color: red;
+  }
+
+
+
+</style>
+
+</head>
+<body>
+<section>
+  <button type="button">
+    <i class="fa-brands fa-google"></i>  <a href="https://www.google.com">구글</a>
+  </button>
+
+  <button type="button">
+    <i class="fa-brands fa-github"></i>
+    <a href="https://www.naver.com">GIT</a>
+  </button>
+  <button type="button">
+    <i class="fa-brands fa-instagram"></i>
+    <a href="https://www.daum.net">인스타</a>
+  </button>
+
+  <input type="text" tabindex="1" value="텍스트1" disabled>
+  <input type="text" tabindex="2" value="텍스트2">
+
+
+</section>
+
+</body>
+</html>

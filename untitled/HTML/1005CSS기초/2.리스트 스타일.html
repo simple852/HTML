@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트 스타일</title>
+    <style>
+        .new::after{
+            content: "new!";
+            background-color:red;
+            color:white;
+            font-size:20px;
+            font-weight:bold;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left:5px;
+            /*animation: reverse;*/
+        }
+        .new:hover{
+            background-color:blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<style>
+    li{
+        /**/
+        display: inline-block;
+        list-style-type: none;
+        /*list-style-image: url("");*/
+        /*list-style-position: outside;*/
+
+    }
+</style>
+<body>
+    <ul>
+        <li class="new">사과🍎🍎</li>
+        <li>바나나🍌🍌</li>
+        <li>복숭아🌰🌰</li>
+    </ul>
+
+
+
+</body>
+</html>

@@ -19,7 +19,8 @@
     position:
     static : 기본 값 top / right / bottom / left를 무시함
     relative : 원래의 위치를 기준으로 이동(position이 static일 때를 기준)
-    absolute : position이 static이 아닌 가장 가까운 부모/ 선조를 기준으로 이동
+    absolute : position이 static이 아닌 가장 가까운 부모/ 선조를 기준으로 이동 겹치게 가능
+    ex) 이미지 위에 하트표시 같은것들
     fixed : 스크롤에 구애받지 않고 위치를 사수함
     */
     .box1{
@@ -37,6 +38,18 @@
         top:50px;
 
     }
+    .box4{
+        /*컨테이너를 고정 시켜서 스크롤 해도 고정되어있음*/
+        position: fixed;
+        background-color: red;
+        z-index: 99;
+    }
+    .sticky{
+        position: sticky;
+        padding-top: 32px;
+        top: -32px;
+    }
+
   </style>
 </head>
 <body>
@@ -44,11 +57,23 @@
 
 
 <div class ="box1">box1</div>
+<div class ="box4">box4</div>
 <section>
     <div class ="box2">box2</div>
     <div class ="box3">box3</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div class="sticky">sticky box</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
 </section>
-<div class ="box4">box4</div>
 
 </body>
 </html>
