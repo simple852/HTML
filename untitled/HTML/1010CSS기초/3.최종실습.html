@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/32af1d52c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<script>
+    window.onload = () =>{
+        const headB = document.querySelector('.headB');
+        const headC = document.querySelector('.headC');
+
+        headB.addEventListener('click', () =>{
+            headC.toggleAttribute('active');
+        })
+    }
+</script>
+<header>
+
+        <div class ="container">
+            <div class="container-small">
+                <a href="#" class="headA">PORTFOLIO</a>
+                <button type="button" class="headB">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <nav class ="headC">
+                <ul>
+                    <li><a href="#first">TOP</a></li>
+                    <li><a href="#second">소개</a></li>
+                    <li><a href="#third">프로젝트</a></li>
+                    <li><a href="#four">CAREER</a></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+</header>
+
+
+<section class ="conA" id="first">
+    <div class="container">
+<!--        img는 로고 아이콘으로-->
+        <img src="data:image/png;base64,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">
+        <h1>PORTFOLIO</h1>
+        <p>
+            BACK END SPECIAL<br>
+            simple852
+        </p>
+        <a href="#">보러가기</a>
+    </div>
+</section>
+
+<section class="conB" id="second">
+    <div class = "container">
+        <div class="text">
+            <span class="fa-solid fa-database"></span>
+            <h2>데이터베이스</h2>
+            <p>MYSQL</p>
+            <div class = "more">
+                <a href="" >더 알아보기...</a>
+                <span class="fa-solid fa-right-from-bracket"></span>
+            </div>
+        </div>
+        <div class = "text">
+
+            <span class="fa-solid fa-database"></span>
+            <h2>서버 담당</h2>
+            <p>
+                아니 언아만 잘 하는 줄 알았더니 서버도 잘해?
+            </p>
+            <div class = "more">
+                <a href="" >더 알아보기...</a>
+                <span class="fa-solid fa-right-from-bracket"></span>
+            </div>
+
+        </div>
+
+        <div class = "text">
+
+            <span class="fa-solid fa-database"></span>
+            <h2>웹 담당</h2>
+            <p>
+                아니 언아만 잘 하는 줄 알았더니 서버도 잘해?
+            </p>
+            <div class = "more">
+                <a href="" >더 알아보기...</a>
+                <span class="fa-solid fa-right-from-bracket"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</section>
+
+
+<section class="conC" id="third">
+    <div class="container">
+        <div class ="photo"></div>
+        <div class ="text">
+            <h2>오마이갓 나의 프로젝트</h2>
+            <p>
+                나의프로젝트
+            </p>
+            <a href="#">
+                자세한 내용 보기
+                <span class="fa-solid fa-right-from-bracket"></span>
+            </a>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="conD" id="four">
+    <div class="container">
+        <div class ="photo"></div>
+        <div class ="text">
+            <h2>오마이갓 나의 프로젝트</h2>
+            <p>
+                나의프로젝트
+            </p>
+            <a href="#">
+                자세한 내용 보기
+                <span class="fa-solid fa-right-from-bracket"></span>
+            </a>
+
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class = "footA">
+            <h2>PORTFOLIO</h2>
+            <p>
+
+               이메일 :  <a href="">test@naver.com</a>
+            </p>
+
+<!--
+title 속성으로 아이콘이 의미하는 내용을 스크린 리더(브라우저)에 전달 가능
+스크린 리더에서는 aria-hidden=true 속성의 아이콘은 보이지 않음
+class
+-->
+            <nav class="footB">
+                <ul>
+                    <li>
+                        <a href="#" title="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                         </a>
+                    </li>
+                    <li>
+                        <a href="#" title="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="google">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+    </div>
+
+
+    <nav class="footC">
+        <div>
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">목록1</a></li>
+                <li><a href="#">목록2</a></li>
+                <li><a href="#">목록3</a></li>
+                <li><a href="#">목록4</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">목록1</a></li>
+                <li><a href="#">목록2</a></li>
+                <li><a href="#">목록3</a></li>
+                <li><a href="#">목록4</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">목록1</a></li>
+                <li><a href="#">목록2</a></li>
+                <li><a href="#">목록3</a></li>
+                <li><a href="#">목록4</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class ="footC">
+         &
+        &#169 PORTFOLIO corp. aLL rights reserverd.!
+    </div>
+</footer>
+</body>
+</html>

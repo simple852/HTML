@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid 연습2</title>
+    <style>
+/*
+    fr(fraction)
+        -영역을 차지하는 비율
+    minmax 함수는 최솟값과 최댓값을 지정할 수 있음
+    maxmax(100px, auto) => 최소 100px 최대는 자동으로 늘어나게하라
+                        =>아무리 내용의 양이 적어도 최소 100px의 크기는 가지게 한다.
+                        => 내용이 많아져도 100px이 넘어가면 알아서 늘어나도록 한다.
+    auto-fill, auto-fit : colimn 개수를 미리 정하지 않고 설정된 너비가 허용하면 셀을 전부 채움
+                        => auto-fill: 셀의 개수가 딱 안맞으면 남는공간이 생김
+                        => auto-fit : 남는 공간을 채움
+
+    align-items : 아이템들을 column(세로)축 방향으로 정렬(컨테이너에 적용)
+    justify-items : 아이템들을 (rows)가로축 방향으로 정렬(컨테이너에 적용)
+    이 외 정렬.. flex와 같음
+
+
+*/
+        section {
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(30%,auto));
+            gap:10px 10px;
+        }
+        div{
+            box-sizing: border-box;
+            border:1px solid black;
+
+        }
+        div:first-child{
+          grid-column: 1/4; /*1부터 스타트 4 까지 end*/
+
+        }
+        div:nth-child(2){
+            grid-row : 2/4;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div>그리드아이템1</div>
+    <div>그리드아이템2</div>
+    <div>그리드아이템3</div>
+    <div>그리드아이템4</div>
+    <div>그리드아이템5</div>
+    <div>그리드아이템6</div>
+
+
+
+</section>
+
+
+</body>
+</html>

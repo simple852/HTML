@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>막대 그래프 그리기</title>
+    <style>
+        .wrapper{
+            margin: 0 auto;
+            /*width:100%;*/
+            /*border:1px solid;*/
+        }
+        .bar{
+            width:500px;
+            height: 50px;
+            background-color:beige;
+            border: 1px solid;
+            border-radius: 25px;
+
+
+        }
+        .bar::after{
+            display: block;
+            content: '';
+            width:0;
+            height: 100%;
+            background-color:black;
+            border: 1px solid;
+            border-radius: 25px;
+            animation-name:bar-animation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bar-animation{
+            from{
+                width:5%;
+            }
+            to{
+                width:100%;
+            }
+
+        }
+
+        .js::after{
+            max-width: 30%;
+        }
+        .sql::after{
+            max-width: 80%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>JAVASCRIPT</h2>
+        <div class="bar js"></div>
+        <h2>Mysql</h2>
+        <div class="bar sql"></div>
+    </div>
+
+</body>
+</html>

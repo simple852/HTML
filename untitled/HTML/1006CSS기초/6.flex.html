@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>플렉스 </title>
+    <script src="https://kit.fontawesome.com/32af1d52c8.js" crossorigin="anonymous"></script>
+    <style>
+        .container{
+            display: flex;
+            width: 700px;
+            height: 500px;
+            background-color: beige;
+            margin:10px 0;
+        }
+        .box{
+
+            box-sizing: border-box;
+            width:100px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: darkgray;
+        }
+
+        #opt1{
+            /*
+                align-items:
+                    -flex-start:교차축 시작점 기준으로 배치. 기본값
+                    -flex-end: 끝점 기준으로 배치(기본 바닥 배치)
+                    -center: 중앙배치
+                    -baseline: 문자 기준선에 맞춰 배치
+                    -stretch:항목을 늘려 가득차게 배치. flex 요소에 height가 없을때 적용됨
+            */
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        #opt2{
+
+            justify-content: center;
+        }
+        #opt2> .box:nth-child(3){
+            /*align-self 는 자식요소에 적용*/
+            align-self: center;
+        }
+        #opt2> .box:nth-child(4){
+            align-self: end;
+        }
+        #opt3{
+            height: 700px;
+            flex-wrap: wrap;
+            /*align-items: center;*/
+            /*
+                align-items는 여러 줄을 하나의 통쨰로 보고 이동시킨다.
+                align-content는 요소가 여러줄일때 한 줄씩 정렬한다.
+            */
+            align-content: space-between;
+        }
+        #opt4 >.box:nth-child(3) {
+        flex:1;
+        }
+
+        #opt4 >.box:last-child{
+
+            flex:1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id ="opt1">
+        <div class = box>1</div>
+        <div class = box>2</div>
+        <div class = box>3</div>
+        <div class = box>4</div>
+    </div>
+    <div class="container" id ="opt2">
+        <div class = box>1</div>
+        <div class = box>2</div>
+        <div class = box>3</div>
+        <div class = box>4</div>
+    </div>
+    <div class="container" id ="opt3">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        <div class="box">13</div>
+        <div class="box">14</div>
+        <div class="box">15</div>
+        <div class="box">16</div>
+        <div class="box">17</div>
+        <div class="box">18</div>
+        <div class="box">19</div>
+        <div class="box">20</div>
+        <div class="box">21</div>
+        <div class="box">22</div>
+        <div class="box">23</div>
+        <div class="box">24</div>
+        <div class="box">25</div>
+
+    </div>
+    <div class="container" id ="opt4">
+        <div class = box>1</div>
+        <div class = box>2</div>
+        <div class = box>3</div>
+        <div class = box>4</div>
+    </div>
+    <div class="container" id ="opt5">
+        <div class = box>1</div>
+        <div class = box>2</div>
+        <div class = box>3</div>
+        <div class = box>4</div>
+    </div>
+
+    <div class="container" id ="opt6">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        <div class="box">13</div>
+        <div class="box">14</div>
+        <div class="box">15</div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>신세계</title>
+  <style>
+
+  .container{
+    display: flex;
+    border: 1px solid;
+    width: 100vw;
+    height: 350px;
+    background-color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .title{
+    border: 1px solid;
+    text-align: center;
+    font-size:30px;
+    padding-top:50px;
+    width: 100%;
+    height: 100px;
+
+  }
+  #box{
+    box-sizing: border-box;
+    width:300px;
+    height: 300px;
+    border: 2px solid black;
+    background-color: darkgray;
+
+
+  }
+
+
+    .contents1{
+      position: relative;
+      width: 200px;
+      height: 400px;
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814065601724822466482_960.jpg&w=400&h=440&edit=c&t=fb38f02467b0df4f3e399dd8cdbc080b07509f6d");
+      background-size: cover;
+    }
+    .contents2{
+      width: 200px;
+      height: 400px;
+      background-image: url("https://sui.ssgcdn.com/cmpt/banner/202309/2023092814075627598738103973_402.jpg");
+      background-size: cover;
+    }
+    .contents3{
+      width: 200px;
+      height: 400px;
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814065601724822466482_960.jpg&w=400&h=440&edit=c&t=fb38f02467b0df4f3e399dd8cdbc080b07509f6d");
+      background-size: cover;
+    }
+    .contents4{
+      width: 200px;
+      height: 400px;
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814085416184448531544_460.jpg&w=400&h=440&edit=c&t=8f2cfca27e426dabea26643fcbedfe3471b46b78");
+      background-size: cover;
+    }
+    .footer{
+      display:flex;
+      align-items: center;
+      flex-direction: column;
+      /*justify-content: space-between;*/
+
+    }
+  .hover{
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    bottom: -100px;
+    width: 100%;
+    height: 50px;
+    transition-duration: 1s;
+
+  }
+  .contents1:hover{
+
+    bottom: 0;
+    /*transition-delay: 500ms;*/
+
+
+    text-underline: none;
+  }
+
+  </style>
+</head>
+<body>
+
+<main>
+  <div class ="title" >
+    <span >Shinsegae Now</span>
+  </div>
+  <section class="container">
+
+
+      <div class="contents1" id="box">
+        <div class="hover">
+          <span>호버 띄우기</span>
+          <a href="#">  <i class="fa-solid fa-arrow-right"></i></a>
+
+        </div>
+      </div>
+
+      <div class="contents2" id="box"></div>
+
+      <div class="contents3" id="box"></div>
+
+      <div class="contents4" id="box"></div>
+
+
+  </section>
+  <div class="footer">
+    <h3>신세계 채널</h3>
+    <h5>신세계 백화점 소식</h5>
+    <span>아이콘</span>
+  </div>
+
+
+
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    main{
+      border:1px solid;
+      width: 1200px;
+      margin: 0 auto;
+
+    }
+    h2{
+      font-size: 5rem;
+      text-align:center;
+    }
+
+    .bg-container{
+      display: flex;
+      justify-content:center;
+      width:100%;
+      height:500px;
+      background-color:beige;
+      overflow: hidden;
+    }
+
+    .background{
+      position: relative;
+      margin: 10px 20px ;
+      width:20%;
+      height:100%;
+      justify-content:space-between;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+    .info-section{
+      text-align:center;
+      font-size: 1.5rem;
+    }
+
+    .background>div{
+      text-align: center;
+      position: absolute;
+      bottom : -150px;
+      background-color: rgba(0,0,0,0.8);
+      width: 100%;
+      height: 100px;
+      color: white;
+
+
+
+    }
+    .background:hover>div{
+      bottom: 0px;
+      transition-duration: 1s;
+
+    }
+
+    .bg1{
+
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814065601724822466482_960.jpg&w=400&h=440&edit=c&t=fb38f02467b0df4f3e399dd8cdbc080b07509f6d");
+    }
+    .bg2{
+
+      background-image: url("https://sui.ssgcdn.com/cmpt/banner/202309/2023092814075627598738103973_402.jpg");
+    }
+    .bg3{
+
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814085416184448531544_460.jpg&w=400&h=440&edit=c&t=8f2cfca27e426dabea26643fcbedfe3471b46b78");
+    }
+    .bg4{
+
+      background-image: url("https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202309/2023092814065601724822466482_960.jpg&w=400&h=440&edit=c&t=fb38f02467b0df4f3e399dd8cdbc080b07509f6d");
+    }
+
+
+    .info-section>div>a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration:none;
+      width: 50px;
+      height: 50px;
+      border-radius:50%;
+      color:white;
+      background:black;
+    }
+  </style>
+</head>
+<body>
+<main >
+  <div>
+    <h2>신세계 백화점</h2>
+  </div>
+    <section class="bg-container">
+      <div class="background bg1">
+        <div>test1</div>
+      </div>
+      <div class="background bg2">
+        <div>test2</div>
+      </div>
+      <div class="background bg3">
+        <div>test3</div>
+      </div>
+      <div class="background bg4">
+        <div>test4</div>
+      </div>
+    </section>
+
+
+  <section class="info-section">
+    <div>asdasd</div>
+    <div>asdassdads</div>
+    <div>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+    </div>
+
+  </section>
+
+</main>
+
+
+
+
+</body>
+</html>

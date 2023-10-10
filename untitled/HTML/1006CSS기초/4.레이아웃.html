@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃</title>
+    <style>
+        .title {
+            height:200px;
+            position: fixed;
+            text-align: center;
+            font-size:50px;
+            z-index:99;
+            left:50%;
+        }
+        aside{
+
+            position: sticky;
+            float: left;
+            top:0;
+            width: 150px;
+            height: 200px;
+            background-image: url("https://sui.ssgcdn.com/cmpt/banner/202309/2023092109132703335283032628_500.jpg");
+            background-position: left;
+            background-size: cover;
+
+        }
+        .article-container{
+
+            width:100%;
+
+            height: 100vh;
+            background-image: url("https://sui.ssgcdn.com/cmpt/banner/202309/2023092109493289675372356637_764.jpg");
+        }
+    </style>
+</head>
+<body>
+    <section class="title">
+        <span>Magazine</span>
+    </section>
+
+    <main>
+        <aside>
+<!--            <img src="" alt="">-->
+            <h2>THIS IS TITLE</h2>
+        </aside>
+        <section class="article-container">
+            <article>
+
+                <div>내용</div>
+            </article>
+        </section>
+
+    </main>
+</body>
+</html>

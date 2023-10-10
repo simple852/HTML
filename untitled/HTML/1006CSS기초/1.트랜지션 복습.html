@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>트랜지션 복습</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background: darkgray;
+      border: 1px solid #6eff66;
+      /*
+      n초에 걸쳐서 트렌지션 실행
+      */
+      transition-property:all;
+      transition-duration:2s,3s;
+
+    }
+    div:hover{
+      /*margin: 150px;*/
+      /*transform:scale(120%,150%);*/
+        transform: rotate(720deg) translatey(300px);
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+<div></div>
+
+
+</body>
+</html>
