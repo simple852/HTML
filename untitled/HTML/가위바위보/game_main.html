@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가위바위보</title>
+</head>
+<style>
+    .user , .computer {
+        display: inline-block;
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+    }
+    .header{
+        position: relative;
+        top : 100px;
+        text-align: center;
+
+    }
+    .header > div{
+        font-size: 60px;
+        font-weight: bold;
+    }
+    .header>span{
+        font-size: 60px;
+        font-weight: bold;
+    }
+    .score{
+        position: absolute;
+        left: 70% ;
+        bottom : 100%;
+    }
+    .game{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid black;
+        top : 200px;
+    }
+    .user{
+        background: url(image/가위.png) no-repeat;
+        background-size: cover;
+
+    }
+    .computer{
+
+        background: url(image/바위.png) no-repeat;
+        background-size: cover;
+    }
+    .btn{
+        position: relative;
+       display: flex;
+        justify-content: center;
+    }
+    .btn-start{
+        width: 250px;
+        height: 150px;
+    }
+</style>
+<body>
+<div class="header">
+    <div class="score">점수 : <span>1000</span></div>
+    <div class="vs">vs</div>
+    <span class="score-user">1</span>
+    <span class> : </span>
+    <span class="score-computer">2</span>
+</div>
+<div class="game">
+<div class ="user">
+    <span class="user-name"></span>
+    <div class="user-choice"></div>
+</div>
+
+
+<div class ="computer">
+    <span class="computer-name"></span>
+    <div class="computer-choice"></div>
+</div>
+</div>
+
+
+
+<div class="btn">
+    <button class="btn-start">시작하기</button>
+    <button class="btn-rank">랭킹보기</button>
+</div>
+
+
+
+</body>
+</html>

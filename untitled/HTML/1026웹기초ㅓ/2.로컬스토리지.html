@@ -43,4 +43,15 @@
 
     }
 
+
+    saveBtn.onclick= (ev)=>{
+        localStorage.setItem("textColor",textArea.style.color)
+        localStorage.setItem("bgColor",textArea.style.backgroundColor)
+    }
+
+    loadBtn.onclick= (ev)=>{
+        textArea.style.color  = localStorage.getItem("textColor")
+        textArea.style.backgroundColor = localStorage.getItem("bgColor")
+    }
+
 </script>
