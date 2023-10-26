@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function solution(array, n) {
+            var answer = 0;
+
+            var gap=0;
+
+            let arr = [];
+
+
+
+            for(let i=0; i<array.length; i++){
+                var minus = n - array[i];
+                if(minus < 0){
+                   minus =  minus * -1;
+                }
+
+                arr.push(minus);
+
+
+            }
+            var min= arr[0];
+            for(let i=0; i<arr.length; i++){
+                if(min > arr[i]){
+                    min = arr[i];
+                }
+            }
+            var index =  arr.indexOf(min);
+            var result = array[index];
+            console.log(result);
+            answer = array[result];
+
+
+            return answer;
+
+        }
+        console.log( solution([3, 10, 28],20));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

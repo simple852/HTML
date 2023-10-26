@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>고차원 배열</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    function func1(args){
+        args;
+        console.log('func 실행되었다!')
+        console.log(`받은 파라미터는 ${args} 이다`)
+
+    }
+
+    //콜백(callback) 함수 =>함수의 이름이나 형태를 전달 받아 다른 객체/함수가 전달 받은
+    // 함수를 실행하는 것
+    function func2(args){
+        console.log('func2 실행되었다!')
+        console.log(`받은 파라미터는 ${args} 이다`)
+
+    }
+
+    // var f= func1;
+    // f(1);
+    // console.log(`실행된 함수 결과는 ${f.toString()} 이다`)
+
+
+    // var funcs =  {f1: func1};
+    // funcs.f1()
+    // console.log(func1)
+
+
+    func1(func2(312));
+
+
+   var flag = false
+   //
+
+    //  console.log(tenCheck(array))
+    // function tenCheck(array) {
+    //     for(let i of array){
+    //         if(i>10){
+    //             return false;
+    //         }
+    //     }
+    //     return true
+    // }
+
+
+    var array =  [1,2,3,4,8,10,4,15];
+
+    console.log(array.every((element) =>{
+        if(element<10)
+            return element <= 10;
+    }))
+
+
+    console.log(array.filter((value,index,array)=>{
+         if(value %2 ===0)return value,index,array
+    }))
+
+    var array = ['apple', 'banana', 'melon',"grape", 'watermelon']
+    console.log(array.findLastIndex((element)=>{
+        if(element.length>5){
+        return element
+        }
+    }))
+
+
+
+    array.forEach((element)=>{
+        if(element.length>5){
+            // console.log(element)
+        }
+    })
+
+
+    // console.log(array.keys(array).next())
+    // let map = new map();
+
+   //  i=0;
+   // console.log(array.map((element)=>{
+   //     element.set()
+   //
+   // }))
+
+
+
+    var array = [1,2,3,4];
+   console.log(array.reduce((element,current,index,arr)=>{
+       // console.log('reduce',element,current,index,arr)
+       // return element + current
+
+   },0))
+
+
+
+    var array = [1,2,3,4];
+    console.log(array.reduce((prev,current,index,arr)=>{
+        // if(index === arr.length -1){
+        //     return (prev +current) /arr.length
+        // }else {
+        //     return prev+current
+        // }
+    },0))
+
+
+
+
+
+
+    var test = [1,2,3,4,5]
+    let i = 0;
+    console.log(test.reduce( (element,current,index,arr )=>{
+
+         console.log('prev:',element,'current: ',current)
+
+    }),0)
+
+    var values = [1,[2,[6,7,8]],4,[5,6]]
+    result = values.flat(2)
+    console.log(result)
+
+</script>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blob와 file</title>
+</head>
+<style>
+    div{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+
+<input type="file" multiple>
+
+
+<div>
+    파일을 넣어주세요
+</div>
+<img alt="">
+</body>
+
+
+<script>
+    //Blob는 데이터 덩어리로,2진 데이터를 의미함
+    // source : 버퍼 배열 (byte 데이터)
+    // contentType: 생성하는 데이터의 MIME 타입
+    // Blob 객체의 STring 타입 데이터는 UTF-8 Binary 데이터로 변환됨
+    // blob객체는 size(데이터 크기, byte 단위)
+  //             type(MIME 타입을 뜻하는 문자열 프로퍼티, 읽기 전용)
+    //           slice (start, end, contentType)
+    //           =>버퍼의 start부터 end까지의 복사본을 contentType인 Blob객체로 반환
+  // var blob =  new Blob(source,{type:contentType});
+
+
+    var blob = new Blob(["JAVASCRIPT","1234"],{type:"text"});
+
+
+    //이진 데이터로 다룰 떄는 application-octet-stream을 사용한다.`
+    //부호있는 8bit 정수 배열
+    var number =new Uint8Array([1,2,3,4,5]);
+
+    var blob = new Blob(number,{type:"application/octet-stream"});
+
+
+
+
+    //File 객체는 Blob 객체를 상속받은 객체 => 로컬 파일을 읽거나 쓸 수 이싿.
+    // 1) type="file"인 input 요소로 불러오기
+    const inputTag =  document.querySelector('input')
+    const divTag =  document.querySelector('div')
+    //현재 input 태그에 설정되어있는 file 객체들을 불러온다.
+    inputTag.files
+
+
+
+    inputTag.onchange= ()=>{
+        //단순 텍스트 내용 가져오기!!!
+        // console.log(inputTag.files[0])
+        // const file = inputTag.files[0];
+        // file.text().then(x=>{
+        //     divTag.innerText  =`파일명 : ${file.name} /
+        // 사이즈 : ${file.size}/
+        // 내용 : ${x}
+        // `}
+        // )
+        /*    이미지 미리보기   */
+        const img = document.querySelector('img');
+        const file = inputTag.files[0];
+        const reader = new FileReader();
+
+        if(file){
+            reader.readAsDataURL(file)
+        }
+
+        reader.addEventListener('load',()=>{
+            img.src = reader.result;
+        });
+
+    }
+
+    // 2) 드래그 & 드롭으로 불러오기
+    // => 드래그한 File 객체가 dataTransfer 프로퍼티 내의 files 프로퍼티에 저장된다.
+    divTag.ondragover=(event)=>{
+        event.preventDefault()
+    }
+    divTag.ondrop= (ev)=>{
+
+        console.log(   ev.dataTransfer.files)
+    }
+
+    //Blob객체는 내용을 읽는 메서드가 없음.
+    //File 뿐만 아니라 Blob 데이터도 읽기 가능하며 , 읽은 데이터는 result 프로퍼티에 저장됨
+    //readAsText(blob, [encoding]) : 텍스트 형식으로 읽기
+    //readAsDataUrl(blob) : dataURL이 가리키는 데이터 읽기
+    //readAsDataString(blob) : 이진 데이터 형식으로 읽기
+    let reader = new FileReader();
+    // reader.readAsText(data,"UTF-8")
+
+    //BlobURL
+    //blob은 Blob 데이터를 가리키는 URL을 가질 수 있다.
+    // URL.createObjectURL() 함수를 사용하여 Blob객체에서 Blob URL을 가져옴
+    let data = new Uint8Array([1,2,3]);
+    let blobData = new blob(inputTag.files[0],{type:"application/octet-binary"})
+    let blobURL = URL.createObjectURL(blobData);
+
+    console.log(blobURL); // blob: 으로 시작되는 문자열이 URL로 지정된다
+    URL.revokeObjectURL(blobURL); // 설정한 BLob URL을 메모리에서 해제한다.
+
+
+    // 사용 예
+    // 이미지의 BLob URL을 img 태그의 src 속성 값으로 설정한다.
+    let blobURLData = URL.createObjectURL();
+    let img = document.createElement('img')
+    img.src = blobURLData;
+    // 2) http 통신에서 BlobURL 데이터를 텍스트로 읽어 들이기
+    let req = new XMLHttpRequest();
+    req.open('GET', blobURLData)
+    req.send();
+    req.onload = () =>{req.responseText}
+
+
+
+
+
+
+
+
+
+</script>
+</html>

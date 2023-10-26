@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+    <script>
+        var date =  Date(); //문자열로 판단
+        console.log(date); //현재 날짜와 시간이 나옴
+
+        var date = new Date(); //출력되는 것은 위와 같다 하지만 Date객체로 나옴
+        console.log(date);
+
+        //Date 객체에 있는 기능들을알아보자
+        console.log(date.getDate());
+        console.log(date.getFullYear()); //2023
+        console.log(date.toUTCString()); //Mon, 16 Oct 2023 08:10:52 GMT
+        console.log(date.toLocaleDateString()); //2023. 10. 16
+        console.log(date.toLocaleTimeString()); // 오후 5:13:42
+        console.log(date.toLocaleString()); // 2023. 10. 16. 오후 5:13:42
+
+    </script>
+</head>
+<body>
+<input type="date" value ="2022-09-08" min = "2022-01-01">
+
+</body>
+</html>

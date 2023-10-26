@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열</title>
+    <script>
+
+        //객체 형식ㅇ으로 생성 =>사용안함
+        // 값 1개만 작성 시 그 숫자만큼 공간 생성
+        var arr = Array(10);
+        console.log(arr);
+
+
+        //리터럴 형식으로 생성 => 일반적인 방법
+       var arr = [1,2,3,4,5]
+        console.log(arr);
+
+
+       //배열 값 가져오기
+        console.log(`get : ${arr[0]}`);
+
+
+        console.log(arr);
+
+       //베열에 값추가
+       arr.push(10);
+       console.log(`10 추가 push : ${arr}`);
+
+       //배열 인덱스 0에 추가
+       arr.unshift(5);
+       console.log(`0인덱스 추가 unshift : ${arr}`);
+
+
+        //인데스 0의 값 삭제
+         arr.shift();
+        console.log(`0인덱스 삭제  shift : ${arr}`)
+
+
+
+       //마지막 요소 꺼내서 반한
+       arr.pop();
+       console.log(`마지막 인덱스 pop : ${arr}`);
+
+       /********배열 요소/ 구조 변경 *****/
+       arr = [1,2,3,4,5,6,7,8];
+
+       arr.splice(0,3);
+        console.log(`splice n~n까지삭제 : ${arr}`);
+
+
+        arr.splice(3);
+        console.log(`splice n부터 삭제 : ${arr}`);
+
+/***************** slice ***************/
+
+        arr = [1,2,3,4,5,6,7,8,9,10];
+        var result = arr.slice(0,5);
+        console.log(result);
+        console.log(`인덱스 n부터 인덱스 m-1까지 복사 ${arr}`)
+
+
+
+        /*** reverse ***/
+        arr = [1,2,3,4,25,5,6,7,8,9,10];
+        var result = arr.reverse();
+        console.log(result);
+
+
+        /**** list 와 list 연결***/
+        var arr1 = [1,2,3];
+        var arr2 = [4,5,6];
+        var arr3 = [7,8,9];
+        var result = arr1+arr2;
+        console.log(result);
+        var result = arr.concat(arr2,arr3);
+        console.log(result);
+
+
+        arr1 = [1,2,3,4,5,6,7,8,9];
+        arr2 = [];
+        var result = arr1.copyWithin(2,0);
+        console.log(result);
+
+        arr1 = [1,2,3,4,5,6,7,8,9];
+       //console.log("찾기"+arr1.findIndex(5));
+
+
+
+       /****오름차순으로 정리* **/
+        arr = [10,9,8,7,6,5,4,3,2,1,11];
+        arr.sort() // 문자열로 정렬해버려서 원하는 결과 안나옴
+        arr.sort((x,y)=>x-y); // 오름차순 정렬
+        //arr.reverse();
+        arr.sort((x,y)=>y-x); // 내림차순 정렬
+        console.log(arr);
+
+
+        /******************인덱스 검색 ********************/
+        arr = [10,9,8,7,6,5,4,3];
+        var index = arr.indexOf(5);
+        console.log(index);
+
+        var s = arr.toString();
+        console.log(s);
+
+
+
+        var s = arr.join('-');
+        console.log(s);
+
+
+
+        arr = [1,2,3,4,5,6,7];
+        var count = arr.length;
+
+
+        //값 포함여부 true / false 여부
+        var result = arr.includes(5);
+
+
+
+
+        var dem2 = [[1,2,4], [5,6,7]];
+
+        for(let i = 0; i < dem2.length; i++){
+            for(let j = 0; j < dem2[i].length; j++){
+                console.log(dem2[i][j]);
+            }
+        }
+
+/****************************************************************/
+        //for-in => index를 순회해줌
+
+        arr = [1,2,3,4,5,6,7,8];
+
+        for (var dem2Key in arr) {
+
+        }
+
+        //for-of => 값을 순회해줌
+        for (const dem2Element of dem2) {
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

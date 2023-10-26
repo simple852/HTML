@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>디스럭처럴</title>
+
+
+
+    <script>
+        //구조화괸 배열, 이터러블, 객체 등을 구조파괴 하여 변수에 개별 할당하는것.
+        var arr =[1,2,1000];
+        var [a,b,c =50] =arr; //arr구조를 파괴하여 a,b,c,변수에 각각할당
+        // 배열요소 = 값 => 기본값 지정
+
+        const [x,...y] = [1,2,3]; // x=1, y=[2,3]
+        console.log( [x,...y])
+
+
+        var user ={firstName : 'hong', lastName:'gill Dong'}
+        var {firstName, lastName} = user
+        // property와 변수가 같을 때 자동 대입된다.
+        console.log(firstName,lastName)
+
+        //프로퍼티명과 다른 이름의 변수를 만들고 싶다.
+        //{키값1 : 변수명, 키값2 :변수명 ...} = 객페
+        var {lastAnme:ln , firstName:fn} =user
+        //존재하지 않는 프로퍼티 혹은 기본값을 설정하고 싶을때
+       var {middleName: mn = 'test'} = user
+        console.log(mn)
+
+
+
+        // 배열로서 객체가 여러 개 존재 하는 존재
+        var todoList = [
+            {id:1, content:'설거지', copleted:false},
+            {id:2, content:'청소', copleted:true},
+            {id:3, content:'숙제', copleted:false}
+        ]
+
+        function print_todo_list({content,copleted}){
+            console.log(`함수 내부, ${content}는 ${copleted},다`)
+
+            // console.log(todo[0].content)
+        }
+        print_todo_list(todoList[0])
+        const [, {id,content, copleted}] = todoList;
+        console.log(id)
+        console.log(content)
+        console.log(copleted)
+
+
+
+
+        var obj = {
+            name : [1,2,3],
+            val :{aa:2,b:2}
+        }
+
+        var {val:{aa}} = obj;
+        console.log(aa)
+
+
+
+
+
+        var {xx,zz, ...rest} = {xx:1,yy:2, zz:3}
+        console.log(xx);
+        console.log(rest)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

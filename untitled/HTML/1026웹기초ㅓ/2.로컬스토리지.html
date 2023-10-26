@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로컬 스토리지</title>
+</head>
+<style>
+    textarea{
+        font-size: 18px;
+    }
+</style>
+<body>
+<div>
+   <button>저장하기</button>
+   <button>불러오기</button>
+</div>
+
+<div>
+    글자색 : <input id="textC" type="color">
+    배경색 : <input id="bgC" type="color">
+</div>
+
+<br>
+<textarea id="textArea" cols="30" rows="10"></textarea>
+
+</body>
+</html>
+
+<script>
+    var [saveBtn,loadBtn] = document.querySelectorAll("button")
+    var textColor = document.getElementById("textC")
+    var bgColor = document.getElementById("bgC")
+    var textArea = document.getElementById("textArea")
+
+    textColor.onchange= (ev)=>{
+        console.log(textColor.value)
+        textArea.style.color = textColor.value;
+
+    }
+    bgColor.onchange= (ev)=>{
+        console.log(bgColor.value)
+        textArea.style.backgroundColor = bgColor.value;
+
+    }
+
+</script>

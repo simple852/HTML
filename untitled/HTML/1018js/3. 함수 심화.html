@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수 심화</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    function Line(){
+    }
+    new Function();
+
+    // console.log(Line)
+
+    var point = new Point(10,20)
+    //console.log(point.print1())
+    // console.log(point.x)
+    // console.log(point.y)
+    function Point(xx,yy){
+        this.x = xx;
+        this.y = yy;
+        this.print1 = function(){
+           console.log(this.x,this.y)
+        }
+    }
+    Point.prototype.print1 = function(){
+        console.log(this.x,this.y)
+    }
+
+    var point2 = new Point(100,200)
+     point2.print1()
+    //console.log(Point.prototype)
+
+    //tihs : 자신이 속한 객체를 가리키는 식별자를 참조하는 것
+    //this binding : 식별자와 값을  연결하는 과정
+
+    function  foo(){
+        console.log(this)
+        this.bar =() =>{
+            console.log('bar',this)
+        }
+       this.bar()
+    }
+    new foo().bar();
+    // foo();
+
+
+
+    let f = () =>{
+        console.log('f',this)
+    }
+    // new f(); //불가능 , 화살표 함수는 생성자 함수로 될 수 없다.
+
+
+
+
+    class Perseon{
+        constructor(name) {
+            this.name = name;
+        }
+        print_name(){
+            console.log(`My name Is ${this.name}`);
+            return this.name
+        }
+    }
+
+    const person = new Perseon("영식");
+    console.log(person.name)
+    console.log(person.print_name())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

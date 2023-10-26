@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>단축평가</title>
+
+
+
+    <script>
+        var c1 = "cat";
+        var c2 = "dog";
+        var result = c1 || c2;
+        console.log(result)
+        'cat' || 'dog' // cat
+        'false' || 'dog' // dog
+        'cat' || 'false' // cat
+
+        'cat' && 'dog' // dog
+        'false' && 'dog' // false
+        'dog' && 'false' // false
+
+
+        var done = true;
+        var message = '';
+        if(done) message= '완료';
+        message = done && '완료';
+        console.log(message) //완료
+
+
+
+        // null 또는 undefined 판단
+         var data = null;
+        var data2 ;
+
+        if(data == null){
+            console.log("null이다")
+        }
+
+        // null이면 false로 판단
+        if(!data){
+            console.log("null이다")
+        }
+
+        // undifined이면 false로 판단
+        if(!data2){
+            console.log("null이다")
+        }
+
+        if(!data2 && true){
+            console.log('undifined')
+        }
+
+
+
+        var obj = null;
+        //obj가 null이면 false로 판단하므로 value에는 null이 들어간다
+        //obj가 null이 아니면 true로 판단하기 때문에 value에는 obj.value가 들어간다
+        var value = obj && obj.value;
+
+        console.log(value)
+
+
+
+        /******************ES11에서 도입된 옵셔널 체이닝 연산***************************/
+        // ?.  : 좌항의 피연산자가 null 또는 undefined인 경우 undefined르 반환하고,
+        //       그렇지 않으면 우항의 프로퍼티를 참조한다.
+        var element = null;
+        var value = element?.value; //element가 null이 아니면 element.value로 되다.
+
+        //Falsy
+        var str = '';
+        var length = str && str.length; // 문자열의 길이를 참조한다
+        console.log(length)// ''
+        var length = str?.length // null, undefined가 아니기 때문에 length를 가져옴
+        console.log(length) //0
+
+        //null 병합 연산자.
+        // ?? : 좌항의 피연산작 ㅏnull 또는 undefined인 경우 우항의 피연산자를 반환
+        //      그게 아니라면 좌항의 피연산자를 반환
+
+        var foo = null ?? 'default sTring values';
+        console.log(foo) //'default sTring values';
+
+        // null이나 undefined가 아니므로 '' 그대로 들어간다.
+        var foo = ''?? 'default string value';
+        console.log(foo)// ''
+
+
+
+        /**************스프레드 문법 ************************/
+        const arr =[1,2,3];
+        var a = arr[0];
+        var b = arr[1];
+        var c = arr[2];
+
+        var a =3;
+        b=c=a;
+        console.log(...arr)
+
+        var [a,b,c] = arr;
+        console.log(a,b,c)
+        console.log(...arr) //1,2,3,이 출력된다. 펼쳐짐 spread
+
+
+        var m =  new Map();
+        m.set('test' ,100)
+        console.log(m.get('test'))
+
+        var m = new Map([['a','1'], ['b','2']]);
+        console.log(...m)
+
+
+        var s = new Set([1,2,3,4,5,1]);
+        console.log(s)
+
+
+        var array = [1,4,2,6,8,4,2,9,12]
+        var max = Math.max(...array);
+        console.log(max)
+
+
+
+        var min = Math.min(1,2,3,4,5);
+        console.log(min)
+
+
+
+        function  func(...array){
+            console.log(array)
+        }
+        func(1,2,3,4,5,6)
+        func(1,2,3)
+        func([1,2])
+
+
+
+
+        /**********************************/
+        // 두개의 배열을 합친다.
+        var array = [1,2,].concat([3,4])
+
+        console.log(array);
+
+        //concat 대신 사용
+        result = [...[1,2], ...[3,4]]
+        console.log(result)
+
+
+
+        //splice
+        var arr1 = [1,4];
+        var arr2 = [2,3];
+
+        arr1.splice(1,0,arr2) //1번인덱스에 0개 치우고 그자리에 arr2넣어라
+            // [1,[3,4]]
+        console.log(arr1)
+
+        //배열 copy
+        var origin = [1,2];
+        var copied = origin.slice() //Es5
+        console.log(copied)
+
+        var copied = [...origin] //Es6
+        console.log(copied)
+
+
+        var obj = {x:1, y:2}
+        var copied = obj
+        copied.x = 100
+        console.log(obj)
+
+
+
+        var arrays = [1,2,3]
+        var arrays2 = arrays
+        arrays[0]=100;
+        console.log(arrays2)
+
+
+        var objX ={x:10, y:20};
+        var objY = { y:1, z:2};
+
+        //후순위 객체가 같은 키값이라도 우선권을 가짐
+        merge = {...objX, ...objY}
+
+        console.log(merge)
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

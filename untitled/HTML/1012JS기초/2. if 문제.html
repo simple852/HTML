@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //1번 문제 가장큰수
+        const n1 = 10;
+        const n2 = 100;
+        const n3 = 20;
+
+        //2번 문제 입력받은 수가 3의 배수인가
+       const num = prompt('문자를 입력하세요');
+        if(num %3 == 0){
+            console.log("3의 배수입니다");
+        }else{
+            console.log("3의 배수가 아닙니다.");
+        }
+        //3번
+        const 국어 = 60;
+        const 수학 = 80;
+        const 영어 =40;
+        const sum = 국어+수학+영어;
+        const avg = Math.floor(sum/3);
+        let result = "";
+        if(avg > 80){
+            result = "A학점입니다.";
+        }else if(avg > 50){
+            result = "B학점입니다.";
+        }else if(avg > 30){
+            result = "C학점입니다.";
+        }else{
+            result = "D학점입니다";
+        }
+
+        console.log(result+ "총점수 : " + sum + "평균 : "+ avg +"입니다");
+
+        let resutl = 0;
+         const arr = [n1,n2,n3];
+
+        for(let i =0; i < 3; i++){
+            for(let j =0; j<3; j++){
+                if(arr[i] < arr[j]){
+                    resutl = arr[j];
+                }
+            }
+        }
+
+
+        let max = arr[0]
+        for(let i =0; i< arr.length; i++){
+            if(max<arr[i+1]){
+                max = arr[i+1];
+            }
+        }
+
+        console.log(resutl);
+
+
+
+        let result_second =Math.max(n1,n2,n3)
+       console.log(result_second);
+
+
+
+
+
+
+
+        //삼항 연산자
+        // 조건식? 참 : 거짓
+        1===1?'true':'false'
+        var r = (1===1?'true':'false');
+        console.log(r);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

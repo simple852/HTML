@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>비동기 실행</title>
+</head>
+<style>
+*{
+    text-align:center;
+}
+#times{
+    margin: 10px 0;
+    font-size: 2rem;
+}
+#hour:after,#min:after{
+ content : ":";
+}
+</style>
+<body>
+    <h1>타이머</h1>
+<section>
+    <div id="buttons">
+        <button id="start">시작</button>
+        <button id="stop">일시정지</button>
+        <button id="reset">리셋</button>
+    </div>
+
+    <div id="times">
+        <span id="hour">00</span><span id="min">00</span><span id="sec">00</span>
+    </div>
+</section>
+
+
+
+</body>
+</html>
+
+
+
+<script>
+
+   var startBtn =  document.getElementById("start")
+   var stopBtn =  document.getElementById("stop")
+   var resetBtn =  document.getElementById("reset")
+   var hourTag =  document.getElementById("hour")
+   var minTag =  document.getElementById("min")
+   var secTag =  document.getElementById("sec")
+   let intervalId ;
+   var sec = "0";
+   var min = "1";
+   var hour = "1";
+
+   startBtn.onclick = start
+   stopBtn.onclick = stop
+   resetBtn.onclick = reset
+
+
+
+   function start(){
+       intervalId=  setInterval(plus_time,1)
+   }
+   function stop(){
+       clearInterval(intervalId)
+
+   }
+   function reset(){
+       clearInterval(intervalId)
+       hourTag.innerHTML = "00"
+       minTag.innerHTML = "00"
+       secTag.innerHTML = "00"
+   }
+
+
+   function plus_time(){
+       if(parseInt(sec) < 10){
+           secTag.innerText= "0"+sec;
+       }else{
+           secTag.innerText= sec;
+       }
+       sec = parseInt(sec)+1;
+
+       if(parseInt(sec) >= 60){
+           sec = "0";
+           if(min < 10){
+               minTag.innerText ="0"+min;
+           }else{
+               minTag.innerText =min;
+           }
+           min = parseInt(min)+1
+       }
+       if(parseInt(min) >= 60){
+           min = "0";
+           if(hour < 10){
+               hourTag.innerText ="0"+hour;
+           }else{
+               hourTag.innerText =hour;
+           }
+           hour = parseInt(hour)+1
+       }
+   }
+
+    //해당 time 이후에 function을 한번 실행
+    // setTimeout(function,time) // 시간 이후에 실행
+    //
+    //해당 time마다 funcion 을 한번 실행
+    // setInterval(function,time) // 초마다 함수 실행
+    //취소방법 clearInterval(function)
+
+    // setTimeout(timeout,2000)
+    // setInterval(interval, 2000)
+    // function timeout(){
+    // console.log("timeout")
+    // }
+    // function interval(){
+    //     console.log("timeout")
+    // }
+
+</script>

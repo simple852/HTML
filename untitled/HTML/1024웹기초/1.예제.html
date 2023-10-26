@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="js/예지.js"defer></script>
+</head>
+<style>
+  section{
+    box-sizing: border-box;
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  .my-comment{
+    display: block;
+    height: 65%;
+  }
+  .my-comment > textarea{
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+
+    padding: 10px 20px;
+  }
+  .submit-comment-container{
+    display:flex;
+    justify-content: space-between;
+    justify-items: stretch;
+    height: 35%;
+    align-items:center;
+  }
+  .submit-btn{
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-left: 1px solid black;
+    background-color: limegreen;
+    font-weight: bold;
+    color: white;
+    padding: 10px 30px;
+  }
+
+</style>
+<body>
+<section>
+  <label class="my-comment"><textarea id="textId" maxlength="1000"></textarea></label>
+  <div class="submit-comment-container">
+    <div class="submit-comment-word">
+      <span class="now-word">0</span>
+      <span class="max-word">/ 1000</span>
+      <span class="message"></span>
+    </div>
+    <button class="submit-btn">등록</button>
+  </div>
+</section>
+</body>
+</html>

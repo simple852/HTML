@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 전파</title>
+</head>
+<body>
+<a href="https://www.naver.com">이동</a>
+
+<form action="#" method="get">
+
+    <div>
+        <button> 눌러봐</button>
+    </div>
+
+    <div>
+<!--        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fko%2Fillustrations%2F%25EA%25B7%2580%25EC%2597%25AC%25EC%259A%25B4-%25EB%258F%2599%25EB%25AC%25BC-%25EC%2598%2581%25EC%2583%2581-%25EC%25B4%2588%25EC%2583%2581%25ED%2599%2594-7973191%2F&psig=AOvVaw1RVNwqx3hmaTQxLGmAbkWy&ust=1698298627367000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiYuMW9kIIDFQAAAAAdAAAAABAE">-->
+    </div>
+</form>
+</body>
+</html>
+
+<script>
+    //문서에서 button 이름과 div 태그를 가져온다 (맨 위 한 개)
+    const btnTag = document.querySelector('button');
+    const divTag = document.querySelector('div');
+    const aTag = document.querySelector('a');
+    divTag.style.width="200px;"
+    divTag.style.height="200px;"
+
+    divTag.addEventListener('click',()=>{
+        divTag.style.background="red";
+        console.log("div실행")
+    },false)
+
+
+    aTag.addEventListener('click',(evt)=>{
+        // 기본 기능을 정지시킴
+        evt.preventDefault();
+        btnTag.style.backgroundColor="yellow"
+    })
+    btnTag.addEventListener('click',(evt)=>{
+        //이 함수만 실행
+
+        evt.preventDefault();
+        // event.stopPropagation()
+        btnTag.style.color="white";
+        console.log("btn실행")
+    })
+
+    btnTag.addEventListener('click',(evt)=>{
+        evt.preventDefault();
+        btnTag.style.background="purple";
+        console.log("btn실행222")
+    })
+</script>

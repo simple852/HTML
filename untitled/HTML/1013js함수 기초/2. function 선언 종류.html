@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 1. 함수 정의 1) function 선언문
+            function a(){
+
+            }
+
+        // 2. 함수 정의 2) 함수 리터럴
+        let b = function a(){
+            console.log("a");
+        }
+        //선언방식
+        b();
+
+        //3. 함수 정의 3) function 생성자 정의 -- 잘 사용안하는 것
+        let cc = new Function('','console.log("cc")');
+        cc();
+
+        // 함수 정의 4) 화살표 함수로 정의() ={}
+        let test = 'console';
+        let dd = (test) => {
+            console.log(test);
+        }
+        dd();
+
+        // 5. 함수정의 5) 즉시 실행 함수.. 쓸일 잘 없음.
+        // 함수를 만들고 바로 실행해벌겠다. 따라서 이름이 굳이 필요없다.
+        (function (a){
+            console.log(a);
+            console.log("즉시실행");
+        })('파라미터');
+        ((a)=>{console.log(a);})("즉시실행2");
+
+
+        //화살표 함수 연습
+
+        //화살표 함수 실행은 ('화살표 함수') ('파라미터')
+        //인자가 없음
+        (()=>{console.log('없음')})();
+        //인자가 1개일 경우 괄호 생략 가능
+        a =>{console.log(a)};
+        //인자가 여러개일 경우 괄호 작성
+        (a,b,c)=>{console.log(a,b,c)};
+        //내부에 return 이외의 내용이 존재하는 경우 -{} 작성필수
+        ()=> {console.log('ㅋㅋ')}
+        //내부에 return 구문만 존재하는 경우 {}와 return 구문 생략 가능
+        ()=> 100;
+        () =>{return 100;};
+
+
+
+
+        function solution(number, n, m) {
+            var answer = 0;
+            return answer;
+        }
+
+    //      ====>>
+
+        ((n,m)=>{'로직'})();
+
+        let  k= 10;
+        k.toString()
+           arr = {};
+        arr.add(1);
+
+        let func = (number,n,m)=>{
+            if(number%n===0 && number % m===0)
+            {
+                return 1;
+            }else{
+                return 0;
+            }
+        };
+        console.log(`결과 는 ${func(100,1,2)}`);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

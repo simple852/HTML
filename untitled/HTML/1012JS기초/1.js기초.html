@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+/*
+* var : 변수 생성 시 기존 변수 판단하지 않고 덮어씀
+* let : 변수 생성시 기존에 변수가 존재하면 오류
+* const : 변수 생성 시 값을 할당해야 함. 상수로 사용됨. 값 변경 불가
+* */
+
+
+        //c= 230; // 전역변수 (사용 금지)
+        var a = 23; //java => final int a =10; // (사용금지)
+        //let b= 10;
+        let b=15;
+        const c = 14;
+
+        var d= a/0;
+        var d= a/'d';
+        var message = 'Hello\nw\torld';
+        console.log(message);
+        var message = "정영식" + " ' \\ 안녕하세요' ";
+        console.log(message);
+        console.log("퍼센트 확인 \%\%");
+
+        var number = 20;
+        number.toString();
+        String.toString(number);
+
+        var textNumber='10';
+
+        console.log(textNumber+number);
+        console.log(''+ number);
+        // 문자열을 => int형으로 변환
+        console.log( parseInt(textNumber));
+        console.log(textNumber -0);
+        console.log(+textNumber);
+
+        // Boolean 변환 시 1 =>true 0이면 false
+        var check = 0;
+        console.log(Boolean(check));
+        // boolean 변환시 값이 존재하면 => true , null/undefined => false
+        var check = undefined;
+        console.log(Boolean(check));
+
+
+        var check = '';
+        console.log(Boolean(check));
+        var check = 'false'; //값이 있기 때문에 true
+        console.log(!!check);
+
+        var check = false;
+        console.log(!check)
+
+
+
+       //Js는 자동 타입 변환을 한다.
+
+       let value= 1;
+
+        if(value === 1) {
+        console.log("1입니다");
+        }else if(value===2){
+        console.log("2입니다");
+        }else if(value===3){
+            console.log("3입니다");
+        }else if(value===4){
+            console.log("4입니다");
+        }else{
+            console.log("값이 없습니다.");
+        }
+
+        //  === : 타입 변환 안하고 자료형과 값이 같아야 true
+        //  == : 타입 변환이 가능하다면 값만 비교한다.
+
+
+        switch(value){
+            case 1:
+                console.log("1입니다");
+                break;
+            case 2:
+                console.log("2입니다");
+                break;
+            case 3:
+                console.log("3입니다");
+                break;
+
+            default:
+                console.log("값이 없습니다");
+                break;
+        }
+
+
+        var score = 60;
+        if(score >= 90){
+            console.log("학점 A");
+        }else if(score > 80 ){
+            console.log("학점 B");
+        }else if(score > 70){
+            console.log("학점 C");
+        }else if(score > 60){
+            console.log("학점 D");
+        }else{
+            console.log("학점 F");
+        }
+
+
+    //     연산자 + - * /
+    // ++, --, %
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

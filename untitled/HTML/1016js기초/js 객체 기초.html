@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const obj = {1:10, 'test':1000, abc:5000};
+        const 문방구 = {'연필':1000, '지우개' : 500};
+        console.log(문방구.지우개);
+        console.log(obj);
+        // console.log(obj).1;  불가능
+        // console.log(obj.'test'); 불가능
+        console.log(obj.abc); //abc라는 키
+        var abc = 1;
+        console.log(obj[1]); //불가능
+        console.log(obj['test']);
+        console.log(obj[abc]); // abc라는 변수
+        console.log(obj.abc); // abc라는 변수
+
+
+        //객체는 key값은 문자열로 판단되고, 바깥에 있는 변수값을 그랟로 사용x
+        // values는 바깥의 변수 값을 그대로 사용할 수 있다.
+        var a = 100;
+        var obj2 ={a:a};
+        console.log(obj2['a']);
+
+        var obj3 ={};
+        obj3.text = 'test';
+        obj3['name'] = '영식';
+       // console.log(obj3);
+
+        obj3.text = '변경된 test';
+        console.log(obj3);
+
+
+        //'test' 라는 key가 obj3내에 존재하는가?
+        if( 'text' in obj3){
+            console.log(obj3['text']+'이거')
+        }
+
+
+
+
+
+        console.log();console.log();console.log();console.log();
+
+        var obj4 = {'a':1,'b':2,'c':3, 'd':10};
+        console.log(obj4);
+
+
+        //객체 내부의 값을 다 가져오고 싶을  떄 for-of는 불가능
+        for(var i in obj4){
+            console.log(obj4[i])
+        }
+
+
+         //     .은 키값
+        // [변수] 변수를 쓸때
+
+        /************************************/
+
+        function f(){
+            console.log("일반 함수");
+        }
+        f();
+        new f();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

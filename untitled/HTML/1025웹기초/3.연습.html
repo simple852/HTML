@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    div{
+        width:150px;
+        height:150px;
+        border:1px solid black;
+        text-align: center;
+        align-self: center;
+    }
+    #box1{
+        background-color: #6eff66;
+    }
+    #box2{
+        background-color: #ff7df5;
+    }
+    #box3{
+        background-color : #AAAAAA;
+    }
+    #box4{
+        background-color : cornflowerblue;
+    }
+</style>
+<body>
+<div id="box1">box1</div>
+<div id="box2">box2</div>
+<div id="box3">box3</div>
+<div id="box4">box4</div>
+
+</body>
+</html>
+<script>
+const box1 = document.getElementById("box1")
+const box2 = document.getElementById("box2")
+const box3 = document.getElementById("box3")
+const box4 = document.getElementById("box4")
+
+
+const [co1,co2,co3,co4] = document.getElementsByTagName("div")
+
+
+// 기존 색상과 텍스트
+const box1arr = [getComputedStyle(co1).backgroundColor, co1.innerText]
+const box2arr = [getComputedStyle(co2).backgroundColor, co2.innerText]
+const box3arr = [getComputedStyle(co3).backgroundColor, co3.innerText]
+const box4arr = [getComputedStyle(co4).backgroundColor, co4.innerText]
+
+
+
+box1.setAttribute("draggable","true")
+box2.setAttribute("draggable","true")
+box3.setAttribute("draggable","true")
+box4.setAttribute("draggable","true")
+box1.ondragover= (ev)=>{
+    ev.preventDefault();
+}
+box2.ondragover= (ev)=>{
+    ev.preventDefault();
+}
+box3.ondragover= (ev)=>{
+     ev.preventDefault();
+}
+box4.ondragover= (ev)=>{
+     ev.preventDefault();
+}
+
+
+box1.ondragstart=(ev)=>{
+
+    // 배열=> 원래 색상 // 현재색깔
+    // if(box1arr[0] !== box1.style.backgroundColor){
+    //     console.log("test")
+    //     //box1 = 배열에 있는 원래색깔
+    //     box1.style.backgroundColor = box1arr[0]
+    // }
+    ev.dataTransfer.setData("text/plain",box1arr[1]+"&&"+ box1arr[0])
+}
+box2.ondragstart=(ev)=>{
+    // if(box2arr[0] !== box2.style.backgroundColor){
+    //     console.log("test")
+    //     box2.style.backgroundColor = box2arr[0]
+    // }
+    ev.dataTransfer.setData("text/plain",box2arr[1]+"&&"+ box2arr[0])
+
+}
+box3.ondragstart=(ev)=>{
+    // if(box3arr[0] !== box3.style.backgroundColor){
+    //     console.log("test")
+    //     box3.style.backgroundColor = box3arr[0]
+    // }
+    ev.dataTransfer.setData("text/plain",box3arr[1]+"&&"+ box3arr[0])
+
+}
+box4.ondragstart=(ev)=>{
+    // if(box4arr[0] !== box4.style.backgroundColor){
+    //     console.log("test")
+    //     box4.style.backgroundColor = box4arr[0]
+    // }
+    ev.dataTransfer.setData("text/plain",box4arr[1]+"&&"+ box4arr[0])
+
+
+}
+
+
+box1.ondrop=(ev)=>{
+   var data=  ev.dataTransfer.getData("text/plain")
+    var [text,bgColor] = data.split("&&")
+    console.log(data)
+    box1.innerText = text;
+    box1.style.backgroundColor = bgColor;
+}
+box2.ondrop=(ev)=>{
+    var data=  ev.dataTransfer.getData("text/plain")
+    var [text,bgColor] = data.split("&&")
+    console.log(data)
+    box2.innerText = text;
+    box2.style.backgroundColor = bgColor;
+}
+box3.ondrop=(ev)=>{
+    var data=  ev.dataTransfer.getData("text/plain")
+    var [text,bgColor] = data.split("&&")
+    console.log(data)
+    box3.innerText = text;
+    box3.style.backgroundColor = bgColor;
+}
+box4.ondrop=(ev)=>{
+    var data=  ev.dataTransfer.getData("text/plain")
+    var [text,bgColor] = data.split("&&")
+    console.log(data)
+    box4.innerText = text;
+    box4.style.backgroundColor = bgColor;
+}
+
+
+function fnc(){
+
+}
+
+</script>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    var s ='test';
+    console.log(s);
+    var s = new  String('Test');
+    console.log(s);
+
+
+    var s = 'this is test';
+    /* s에 찾고 싶은 문자 */
+    var result = s.charAt(2); // index에 해당하는 문자열 반환
+    console.log('charAt:' + result);
+    console.log(s[3]);
+
+    var result = s.charCodeAt(1) // code값으로 반환
+    console.log(result);
+
+    var result = s.concat('없나?') //문자열 이어 붙이기
+    console.log(result);
+    var result = s.concat('없나?      ').trim() //앞 뒤공백 제거
+    console.log(result);
+
+    var result = s.indexOf('is') // 해당 문자열의 인덱스값 반환
+    console.log(result);
+
+
+    var result = s.includes('is') // 해당 문자열의 포함여부
+    console.log(result);
+
+
+
+    var result = s.lastIndexOf('is') // 해당 문자열의 인덱스값 반환
+    console.log(result);
+
+
+    var result = s.repeat('is') // 해당 문자열 반환
+    console.log(result);
+
+    /*****************시작과 끝 검색**********************/
+    s = 'https://www.google.com';
+
+    var result = s.startsWith('https') // 해당 문자열로 시작하면 true 아니면 false
+    console.log(result);
+
+    var result = s.endsWith('com') // 해당 문자열로 시작하면 true 아니면 false
+    console.log(result);
+
+
+
+
+
+
+    /**********************************************/
+    var test = 'test'.concat('안녕하세요').concat("영식입니다");
+    console.log(test)
+
+    s = 'This is test';
+    var result = s.slice(8);// end를 생략하면 마지막까지
+    console.log(result) // test
+    var result = s.slice(5,7);// 5~7까지 잘라서 반환
+    console.log(result) // is
+    var result = s.slice(-3);// slice는 음수로 , 끝부터 셀 수 있다.
+    console.log(result) // this
+
+
+
+    var result = s.substring(5,0);// 5~7까지 잘라서 반환 slice와 같다
+    console.log(result) // this
+
+
+
+    result = s.toLowerCase() //소문자 변환
+    console.log(result)
+
+    result = s.toUpperCase() //대문자 변환
+    console.log(result)
+
+    s = '                  dsad           '
+    result = s.trimStart() // 앞부분 공백만 제거
+    console.log(result)
+
+    result = s.trimEnd() // 뒷부분 공백만 제거
+    console.log(result)
+
+
+    result = s.trim() // 양쪽 공백만 제거
+    console.log(result)
+
+
+    s = 'My name is Gildong'
+/*************정규식을 알아야 제대로 쓸 수 있는 함수**************/
+
+    result = s.split("name") // 해당 문자열 기준으로 나눈다.
+    console.log(result) // My,  is Gildong
+
+    result =  s.search('y') //검색한 문자열의 시작 인덱스를 반환
+    console.log(result)
+
+    result =   s.replace('i','a')  //가정 먼저 있는 문자열을 대체한다
+    console.log(result)  //My name as Gildong
+
+
+    result =   s.replaceAll('i','a')  //모든 문자열을 대체한다
+    console.log(result)  //My name as Galdong
+
+    result =  s.matchAll() //일치하는지 판단
+    console.log(result)
+    
+    
+    result =  s.match()
+
+
+    /***************정규식 **************/
+    //일정한 패턴을 가진 문자열의 집합을 표현하기 위해 사용되는 형식 언어
+    //Regular ExpreSSion. 줄여서 RegExp로 표혀한다.
+    //문자열을 대상으로 패턴 매칭 기능을 제공한다.
+    //정규식으로 문자열을 매칭 하는 법
+    // 1) 정규식을 생성한다
+    // 1-1) 리터럴 방식
+    var reg = /is/;
+    //1-2) 정규식 객체를 쓴다
+    var reg = new RegExp(/is/);
+
+
+    // 2) 문자열매칭
+    // 2-1) RegExp 객체의 메서드를 사용
+    // 2-1-1) exec() 매칭 결과를 배열로 반환. 결과가 없다면 null
+
+    var result =reg.exec('Is there is?');
+    console.log('exec : ' , result)
+
+    // 2-1-2 ) test(). 매칭 결과에 대해 true /fals로 반환
+    var result =  reg.test('안녕하세요')
+    console.log('test : ' ,result)
+
+
+    //2-2 ) 문자열의 메서드인 match를 사용
+    // exec와 결과가 같음
+    var result = 'Is there is '.match(reg)
+    console.log('match : ' ,result)
+
+    // search 사용 찾았다면 찾은 위치의 index를 반환
+    var result = 'Is there is '.search(reg)
+    console.log('search : ' ,result) //9
+
+
+
+    //flag (플래그) - 옵션 여러개 같이 사용 가능
+    //1) i: 대소문자 구별하지 않음 (Ignore case)
+    //2) g : 문자열 내에서 일치하는 모든 패턴을 전역 검색한다.(Global)
+    //3) m: 문자열의 행이 바뀌더라도 계속 패턴 검색한다. (Multi Line)
+
+    var reg = /is/ig;
+    var string = 'Is this there  is';
+     result = string.match(reg);
+    console.log(result);
+
+
+    //pattern (패턴)
+    // 1) 임의의 문자열 검색 - '.' 사용
+    var target = 'Is this there is';
+    var reg = /../g;
+    result = target.match(reg);
+    console.log('글자 수',result);
+
+    //2) 반복  검색 - {횟수, 횟수end} 사용
+    // {1} - 무조건1개
+    // {1,2} - 1개~2개
+    // {3,} - 3개이상
+    target = 'A AA B ab Ab AAA';
+    req = /A{2,}/ig;
+    result = target.match(reg);
+    console.log('반복검색',result)
+    //한번 이상 ===+ === {1,}
+    reg = /colou+r/ //   /a{1,}과 같다. colour colouuur
+
+    //있어도 되고, 없어도 된다, 많이 있어도 된다 === ?
+    req = /colou?r/ // color , colour, colouuuur도 된다.
+
+    //or 검색
+    reg = /A|B?/ // A혹은 B를 매칭해라
+
+    //범의 검색 []
+    target = '123ab#%';
+    req = /[a-zA-Z]?[0-9]/ig
+
+    // \w : 알파벳 + 숫자 + _
+    // \W : 위와 반대. 따라서 알파벳 , 숫자 '_' 가 아닌 문자를 의미
+    // \d : 숫자. [0-9]와 같음
+    // \D : 숫자가 ',' 아닌 문자를 의미
+    req = /\w/
+    result = target.match(req);
+    console.log('범위 검색',result)
+
+
+    // NOT 검색 - '^'
+    reg = /[^0123]/; // 0123 이 아닌 문자를 의미함
+    // 시작 위치로 검색 = [] 밖에서 '^'
+    reg = /^abc/; // a로 시작하면서 bc가 뒤에 붙어 있는 문자를 의미함
+    target = 'abcde' // ok
+    target = '123abcde' // x
+
+    // 마지막 위치로 검색 - $
+    reg = /^123!$/  // 1로 시작하면서 !로 끝나는 문자
+
+    //
+    reg = /^https?:\/\/www.naver.com/
+
+    // 특수만자가 있는지 검사하는 법
+    target = /[^a-zA-Z0-9]/ // 알파벳x 숫자가 아닌 문자니, 특수 문자다.
+
+    /*********************************/
+    const cellphone = '010-1235-4567';
+    //전화번호
+    reg = /^01[0-9?]-?([0-9]{3,4})-?([0-9]{3,4})/g
+    result = reg.test(cellphone) ;
+    console.log(result) ;
+
+    /************************/
+    var s  = 'This is test theme';
+    var result = s.replace('is', 'A')
+    console.log(result)
+    var result = s.replaceAll(/th/ig, 'A')
+    console.log(result)
+
+
+
+</script>

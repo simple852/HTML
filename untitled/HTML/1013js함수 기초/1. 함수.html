@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+
+    <script>
+
+        //let  b= prompt("입력해주세요");
+        function a(b){
+            let k =9;
+            result = parseInt(b) + k;
+
+
+            return  result;
+        }
+        //console.log(a(b))
+
+        function hello(name="영석" , location){
+            console.log(`안녕 ${name}아`);
+            console.log(`오늘 목적지는 ${location}`);
+            console.log(`${name}야 가보자구`);
+        }
+        // hello("영식", "서울");
+        // hello("민정", "대구");
+        // hello( lacation ="대구");
+        //
+
+        //여러개의 매개변수를 받을때
+        let arr ={};
+        function many_args(arr){
+            console.log(arr)
+        }
+
+        arr = [1,2,3,4,5,6];
+        many_args(arr);
+
+
+        function condition(weather){
+            let status = "";
+            switch (weather){
+                case "sun":
+                    status = "좋아";
+                    break;
+                case "cloudy":
+                    status ="별로야";
+                    break;
+                case "rainy":
+                    status ="싫어";
+                    break;
+                case "wind":
+                    status ="무서워";
+                    break;
+            }
+            return status;
+        }
+
+        console.log(condition("cloudy"));
+
+
+
+
+
+        let  num1 = document.getElementById("num").value;
+        console.log(num1);
+        function calc(num1,num2,calcs){
+
+        }
+
+
+    </script>
+</head>
+<body>
+<button type="button" id="num" value = "1">1</button>
+<button type="button" value = "2">2</button>
+<button type="button" value = "3">3</button>
+<button type="button" value = "+">+</button>
+<br>
+<button type="button" value = "4">4</button>
+<button type="button" value = "5">5</button>
+<button type="button" value = "6">6</button>
+<button type="button" value = "-">-</button>
+<br>
+<button type="button" value = "7">7</button>
+<button type="button" value = "8">8</button>
+<button type="button" value = "9">9</button>
+<button type="button" value = "*">*</button>
+<br>
+<button type="button" value = "0">0</button>
+<button type="button" value = "=">re</button>
+<button type="button" onclick="calc(num1,num2,calcs)" value = "calc">=</button>
+<button type="button" value = "/">/</button>
+</body>
+</html>

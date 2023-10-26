@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function solution(A, B) {
+      var answer ='';
+      for(let i=0; i<A.length; i++){
+        answer += String.fromCharCode(A.charCodeAt(i)+B)
+      }
+
+
+      console.log(String.fromCharCode(A.charCodeAt(0)+B))
+      console.log(String.fromCharCode(A.charCodeAt(1)+B))
+      console.log(String.fromCharCode(A.charCodeAt(2)+B))
+      console.log(String.fromCharCode(A.charCodeAt(3)+B))
+      console.log(String.fromCharCode(A.charCodeAt(4)+B))
+      console.log(answer)
+      return answer;
+    }
+
+
+
+    var my_string= "hello";
+    var pat = 2;
+    var s = 2;
+    solution(my_string,pat)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

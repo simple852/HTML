@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //n(가로) m(세로) 만큼의 *행태로 출력
+        const n = 2;
+        const m = 4;
+
+        for(let i = 0; i < m; i++){
+            for(let j = 0; j < n; j++){
+                    document.write("*");
+                console.log("*" + "*");
+            }
+            document.write("</br>");
+            console.log("\n" );
+        }
+        let t = [1,23,4];
+        t.
+
+
+        //2. 아래 숫자의 팩토리얼을 구하시오
+        const number = 5;
+        let result2= 1;
+        for(let i =5; i>0; i--){
+            result2 *= i;
+        }
+
+        console.log(" 2번문제 정답 :"+ result2);
+
+        //3. 아래 숫자의 약수의 합을 구하시오
+        const num = 120;
+        let result3 = 0;
+        for(let i = 0; i <= num; i++){
+            if(num%i == 0){
+                result3 += i;
+            }
+
+        }
+        console.log(" 3번문제 정답 :"+ result3);
+
+
+        for(let i = 2; i <10 ; i++){
+            for(let j = 1; j <10 ; j++){
+                document.write(i + "*" + j + "=" + (i*j) + "  ");
+            }
+            document.write("</br>");
+        }
+        document.write("</br>");  document.write("</br>");
+        for(let i = 1; i <10; i++){
+            for(let j = 2; j <10 ; j++){
+                document.write(j + "*" + i + "=" + (i*j) + "     ");
+            }
+            document.write("</br>");
+        }
+
+        for(let i = 1; i < 100; i++){
+            if(i%3 == 0){
+                if(i <11){
+                    document.write("&nbsp;");
+                }
+
+                document.write(i + " ");
+                if(i%5 == 0){
+                    document.write("</br>");
+                }
+            }
+
+        }
+
+        document.write("</br>");
+
+
+        for(let i = 0; i < 10; i++){
+
+            for(let j =0; j<(10-i); j++){
+                document.write("&nbsp");
+            }
+
+            for(let k = 0; k <= i; k++){
+                document.write("*");
+            }
+            for(let k = 1; k <= i; k++){
+                document.write("*");
+            }
+
+            document.write("</br>");
+
+
+        }
+
+
+
+        for(let i = 0; i < 10; i++) {
+
+            for(let j =10; j>(10-i); j--){
+                document.write("&nbsp");
+            }
+            for (let k = 10; k >= i; k--) {
+                document.write("*");
+            }
+            for (let k = 9; k >= i; k--) {
+                document.write("*");
+            }
+            document.write("</br>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
