@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>가위바위보</title>
 </head>
-<script src ="game.js" defer></script>
+<script src ="fight.js" defer></script>
 <style>
     body{
         background: url("image/background.jpg") no-repeat;
@@ -37,9 +37,6 @@
         font-size: 60px;
         font-weight: bold;
     }
-    form>input{
-        height : 50px;
-    }
     .score{
         position: absolute;
 
@@ -68,6 +65,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+        color: black;
 
         align-items: center;
         flex-direction: column;
@@ -78,6 +76,9 @@
     .btn-start, .btn-rank{
         width: 20%;
         height: 100px;
+        font-size:50px;
+        font-weight: bold;
+
     }
     .btn-start{
         background-size: 400% 400%;
@@ -90,7 +91,7 @@
         font-family: "paybooc-Light", sans-serif;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         text-decoration: none;
-        font-weight: 600;
+
         transition: 0.25s;
         background: linear-gradient(
                 45deg,
@@ -104,7 +105,7 @@
                 #ff00c8,
                 #ff0000
         );
-        color: white;
+
     }
     .btn-rank{
         position: relative;
@@ -115,10 +116,10 @@
         font-family: "paybooc-Light", sans-serif;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         text-decoration: none;
-        font-weight: 600;
+
         transition: 0.25s;
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        color: white;
+
     }
     .btn-start:hover, .btn-rank:hover {
         transform: scale(1.2);
@@ -139,33 +140,33 @@
 </style>
 <body>
 <div class="header">
-    <div class="score">점수 : <span></span></div>
+    <div id="winner"></div>
+    <div class="score" >점수 : <span id="nowScore"></span></div>
     <div class="vs">vs</div>
-    <span class="score-user">0</span>
+    <span class="score-user" id ="score1">0</span>
     <span class> : </span>
-    <span class="score-computer">0</span>
+    <span class="score-computer" id ="score2">0</span>
 </div>
 <div class="game">
-<div class ="user">
+<div class ="user" >
     <span class="user-name"></span>
-    <div class="user-choice"></div>
+    <div class="user-choice"  id="user-id"></div>
 </div>
 
 
 <div class ="computer">
-    <span class="computer-name"></span>
-    <div class="computer-choice"></div>
+    <span class="computer-name" ></span>
+    <div class="computer-choice" id="computer-id" ></div>
 </div>
 </div>
 
 
 
-<form class="btn" method="GET" action="game_fight.html">
-    <input type="text" name = "nickName" placeholder="닉네임을 적어주세요" required>
-    <input type="number"  name = "count" placeholder="승리 판수" min="1" required>
-    <button type="submit" class="btn-start" >시작하기</button>
-<!--    <button class="btn-rank">랭킹보기</button>-->
-</form>
+<div class="btn">
+    <button class="btn-start" id="first" value="1">가위</button>
+    <button class="btn-rank" id="second" value="2">바위</button>
+    <button class="btn-rank" id="third" value="3">보</button>
+</div>
 
 
 
