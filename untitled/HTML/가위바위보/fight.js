@@ -50,7 +50,6 @@ function random(){
 }
 
 function random2(){
-
     var randNum = Math.floor(Math.random() * ( 4 - 1 )) + 1
     if(randNum === 1){
 
@@ -88,8 +87,8 @@ function computerStop(value){
     btn3.disabled =true
 console.log("ds")
     var qwer=0;
-   var randMake =  setInterval(()=>{ qwer = random()},300)
-   var randUserMake =  setInterval(()=>{ random2()},300)
+   var randMake =  setInterval(()=>{ qwer = random()},400)
+   var randUserMake =  setInterval(()=>{ random2()},400)
 
     setTimeout( ()=>{
         clearInterval( randUserMake)
@@ -180,11 +179,11 @@ function winner(a,b){
   setTimeout( ()=>{
       if(score1.innerText === count.toString()){
           alert("승리하셨습니다")
-          setTimeout(location.href="game_main.html", 2000)
+          setTimeout(location.href="game_main.html", 1500)
       }else if(score2.innerText === count.toString())
       {
           alert("패배하셨습니다")
-          setTimeout(location.href="game_main.html", 2000)
+          setTimeout(location.href="game_main.html", 1500)
       }
   },2000)
 
