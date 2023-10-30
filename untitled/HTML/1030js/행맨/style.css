@@ -1,0 +1,18 @@
+.answer div{
+    display: inline-flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    background-color: darkslateblue;
+}
+.invisible{
+    opacity: 0;
+}
+img{
+    display: block;
+    width: 200px;
+    border:1px solid black;
+}
